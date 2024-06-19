@@ -1,8 +1,11 @@
 package com.example.pointage_et_salaire;
 
 import java.time.LocalDate;
+import java.util.logging.Logger;
 
 public class PointingTest {
+    private static final Logger logger = Logger.getLogger(PointingTest.class.getName());
+
     public static void main(String[] args) {
         Category cadreSuperieur = new Category("Cadre supérieur", 40, 150000);
         Category normal = new Category("Normal", 40, 100000);
@@ -44,15 +47,16 @@ public class PointingTest {
         double grossSalaryRabe = (normalHourRabe * rabe.getCategory().getHourlyRate()) +
                 (holidayTimeRabe * rabe.getCategory().getHourlyRate() * 1.3);
 
-        System.out.println("Heures normales Rakoto : " + normalHourRakoto);
-        System.out.println("Heures supplémentaires Rakoto : " + additionalHourRakoto);
-        System.out.println("Heures fériées Rakoto : " + holidayTimeRakoto);
-        System.out.println("Salaire brut Rakoto: " + salaireBrutRakoto);
-        System.out.println("Salaire net Rakoto: " + salaireBrutRakoto * 0.8);
 
-        System.out.println("Heures normales Rabe : " + normalHourRabe);
-        System.out.println("Heures fériées Rabe : " + holidayTimeRabe);
-        System.out.println("Salaire brut Rabe: " + grossSalaryRabe);
-        System.out.println("Salaire net Rabe: " + grossSalaryRabe * 0.8);
+        logger.info("Heures normales Rakoto : " + normalHourRakoto);
+        logger.info("Heures supplémentaires Rakoto : " + additionalHourRakoto);
+        logger.info("Heures fériées Rakoto : " + holidayTimeRakoto);
+        logger.info("Salaire brut Rakoto: " + salaireBrutRakoto);
+        logger.info("Salaire net Rakoto: " + salaireBrutRakoto * 0.8);
+
+        logger.info("Heures normales Rabe : " + normalHourRabe);
+        logger.info("Heures fériées Rabe : " + holidayTimeRabe);
+        logger.info("Salaire brut Rabe: " + grossSalaryRabe);
+        logger.info("Salaire net Rabe: " + grossSalaryRabe * 0.8);
     }
 }
