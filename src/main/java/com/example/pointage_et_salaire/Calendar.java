@@ -4,16 +4,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
 public class Calendar {
-    private Set<LocalDate> holidays;
+    private List<LocalDate> holidays;
 
     public Calendar() {
-        this.holidays = new HashSet<>();
+        this.holidays = new ArrayList<>();
     }
 
     public void addHolidays(LocalDate date){

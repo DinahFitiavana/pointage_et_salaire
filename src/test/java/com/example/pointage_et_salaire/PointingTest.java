@@ -28,8 +28,8 @@ public class PointingTest {
     private static void calculHoursAndSalary(Employee rakoto, Employee rabe, Calendar calendar) {
         int workDays = 30;
         int holidays = 3;
-        int dayTime = 14;
-        int NightTime = 10;
+        int dayTime = 8;
+        int NightTime = 8;
 
         int normalHourRakoto = dayTime * (workDays - holidays);
         int normalHourRabe = NightTime * (workDays - holidays);
@@ -37,26 +37,27 @@ public class PointingTest {
         int holidayTimeRakoto = holidays * dayTime;
         int holidayTimeRabe = holidays * NightTime;
 
-        int additionalHourRakoto = 20;
-        int increasedHourRakoto = 2 * 10;
+        int additionalHourRakoto = 16;
+        int increasedHourRakoto = 2 * 8;
 
         double salaireBrutRakoto = (normalHourRakoto * rakoto.getCategory().getHourlyRate()) +
-                (holidayTimeRakoto * rakoto.getCategory().getHourlyRate() * 1.5) +
+                (holidayTimeRakoto * rakoto.getCategory().getHourlyRate() * 1.3) +
                 (additionalHourRakoto * rakoto.getCategory().getHourlyRate());
 
         double grossSalaryRabe = (normalHourRabe * rabe.getCategory().getHourlyRate()) +
-                (holidayTimeRabe * rabe.getCategory().getHourlyRate() * 1.3);
+                (holidayTimeRabe * rabe.getCategory().getHourlyRate() * 1.5);
 
 
-        logger.info("Heures normales Rakoto : " + normalHourRakoto);
-        logger.info("Heures supplémentaires Rakoto : " + additionalHourRakoto);
-        logger.info("Heures fériées Rakoto : " + holidayTimeRakoto);
-        logger.info("Salaire brut Rakoto: " + salaireBrutRakoto);
+        logger.info("Heures normales Rakoto : " + normalHourRakoto + " heures");
+        logger.info("Heures supplémentaires Rakoto : " + additionalHourRakoto + " heures");
+        logger.info("Heures fériées Rakoto : " + holidayTimeRakoto + " heures");
+        logger.info("Salaire brut Rakoto: " + salaireBrutRakoto + " Ariary");
         logger.info("Salaire net Rakoto: " + salaireBrutRakoto * 0.8);
 
-        logger.info("Heures normales Rabe : " + normalHourRabe);
-        logger.info("Heures fériées Rabe : " + holidayTimeRabe);
-        logger.info("Salaire brut Rabe: " + grossSalaryRabe);
-        logger.info("Salaire net Rabe: " + grossSalaryRabe * 0.8);
+        logger.info("Heures normales Rabe : " + normalHourRabe + " heures");
+        logger.info("Heures supplémentaires Rabe: " + 0 + " heures");
+        logger.info("Heures fériées Rabe : " + holidayTimeRabe + " heures");
+        logger.info("Salaire brut Rabe: " + grossSalaryRabe + " Ariary");
+        logger.info("Salaire net Rabe: " + grossSalaryRabe * 0.8 + " Ariary");
     }
 }
