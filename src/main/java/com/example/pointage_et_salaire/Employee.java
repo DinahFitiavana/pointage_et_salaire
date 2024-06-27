@@ -13,19 +13,19 @@ public class Employee {
     private LocalDate birthDate;
     private LocalDate hiringDate;
     private LocalDate endContractDate;
-    private double grossSalary;
-    private double netSalary;
+    private float grossSalary;
+    private float netSalary;
     private Category category;
 
     public Employee(String name, String registrationNumber, LocalDate birthDate, LocalDate hiringDate,
-                    LocalDate endContractDate, double grossSalary, Category category) {
+                    LocalDate endContractDate, float grossSalary, Category category) {
         this.name = name;
         this.registrationNumber = registrationNumber;
         this.birthDate = birthDate;
         this.hiringDate = hiringDate;
         this.endContractDate = endContractDate;
         this.grossSalary = grossSalary;
+        this.netSalary = (float) (grossSalary * 0.8);
         this.category = category;
-        this.netSalary = grossSalary * 0.8;
     }
 }
